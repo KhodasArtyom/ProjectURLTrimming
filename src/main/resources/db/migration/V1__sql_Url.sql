@@ -1,4 +1,4 @@
-CREATE TABLE url_address
+CREATE TABLE url_link
 (
     id BIGSERIAL PRIMARY KEY,
     url TEXT NOT NULL
