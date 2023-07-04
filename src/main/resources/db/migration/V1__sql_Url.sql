@@ -1,0 +1,5 @@
+CREATE TABLE url_address
+(
+    id BIGSERIAL PRIMARY KEY,
+    url TEXT NOT NULL
+);
