@@ -1,5 +1,5 @@
 CREATE TABLE url_link
 (
     id BIGSERIAL PRIMARY KEY,
-    url TEXT NOT NULL
+    full_url TEXT NOT NULL
 );

@@ -1,4 +1,4 @@
-package model;
+package by.tms.url.model;
 
 import lombok.Value;
 
@@ -6,6 +6,6 @@ import java.net.URI;
 
 @Value
 public class URLModel {
-    private long id;
+    long id;
     URI longUrlAddress;
 }
