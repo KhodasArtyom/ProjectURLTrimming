@@ -34,11 +34,10 @@ public class UrlJdbcRepository implements UrlRepository {
     @Override
     public Optional<URLModel> findUrlById(long id) {
         String sql = """
-                SELECT url_link.id, url_link.full_url
+                SELECT id, full_url
                 FROM url_link
-                WHERE url_link.id = :urlId
-                """;
-        return operations.query(sql, Map.of("urlId", id), this::mapToLink)
+                WHERE id = :linkId""";
+        return operations.query(sql, Map.of("linkId", id), this::mapToLink)
                 .stream()
                 .findFirst();
 
@@ -47,7 +46,7 @@ public class UrlJdbcRepository implements UrlRepository {
     private URLModel mapToLink(ResultSet resultSet, int rowNum) throws SQLException {
         return new URLModel(
                 resultSet.getLong("id"),
-                URI.create(resultSet.getString("url")));
+                URI.create(resultSet.getString("full_url")));
     }
 }
 
