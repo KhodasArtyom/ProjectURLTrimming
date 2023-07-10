@@ -4,14 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-
+import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
-@ConfigurationProperties(prefix = "black")
-@Getter
-@AllArgsConstructor
+
+
 @ConfigurationPropertiesScan
+@ConfigurationProperties(prefix = "banned")
+@Getter
+
 public class BlackListConfig {
-     List<String> blackList;
+
+      List<String> bannedList;
 }
 
