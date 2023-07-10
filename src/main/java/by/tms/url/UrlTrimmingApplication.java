@@ -19,7 +19,7 @@ public class UrlTrimmingApplication {
         ConfigurableApplicationContext context = SpringApplication.run(UrlTrimmingApplication.class, args);
         UrlRepository repository = context.getBean(UrlRepository.class);
         //repository.createUrl(URI.create("https://google.com"));
-        Optional<URLModel> urlById = repository.findUrlById(1);
+        //Optional<URLModel> urlById = repository.findUrlById(1);
 
 
     }
