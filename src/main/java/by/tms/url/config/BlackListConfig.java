@@ -13,7 +13,7 @@ import java.util.List;
 @ConfigurationPropertiesScan
 @ConfigurationProperties(prefix = "banned")
 @Getter
-
+@AllArgsConstructor
 public class BlackListConfig {
 
       List<String> bannedList;
