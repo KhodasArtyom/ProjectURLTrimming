@@ -12,4 +12,6 @@ public interface UrlRepository {
     URLModel createUrl(URI url);
 
     Optional<URLModel> findUrlById(long id);
+
+    Optional<URLModel> getShortUrlByLongUrl(URI fullUrl);
 }

@@ -21,6 +21,18 @@ public class UrlJdbcRepository implements UrlRepository {
     }
 
     @Override
+    public Optional<URLModel> getShortUrlByLongUrl(URI fullUrl) {
+        String sql = """
+                SELECT id
+                FROM url_link
+                WHERE full_url =:url
+                """;
+        return operations.query(sql,Map.of("fullUrl",fullUrl),this::mapToLink)
+                .stream()
+                .findFirst();
+    }
+
+    @Override
     public URLModel createUrl(URI url) {
         String sql = """
                 INSERT INTO url_link(full_url)

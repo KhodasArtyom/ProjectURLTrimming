@@ -1,0 +1,37 @@
+
+<!--/*@thymesVar id="shortLink" type="by.tms.url.model.URLModel"*/-->
+<!--/*@thymesVar id="baseShortLinkUrl" type="java.lang.String"*/-->
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Artyom Khodas">
+    <title>Main-Page(URL Trimming)</title>
+</head>
+<body>
+<strong><h1>Enter the link you want to cut</h1></strong> <br>
+<section>
+    <form method="post" action="/add-url" enctype="application/x-www-form-urlencoded"
+          th:action="@{/add-url}">
+        <label for="cut-url">Url Address</label>
+        <input type="text" name="url" id="cut-url">
+        <button type="submit">Cut</button>
+    </form>
+</section>
+<section th:if="${shortLink!=null}">
+    <h2>Shorted links</h2>
+    <a href="https://yandex.by/pogoda/"
+       th:href="${shortLink.getLongUrlAddress()}"
+       th:text="${shortLink.getLongUrlAddress()}">https://yandex.by/pogoda/
+    </a>
+    <span th:text="${baseShortLinkUrl + shortLink.getId()}">
+        http://localhost:8080/to/1
+    </span>
+
+
+</section>
+
+</body>
+</html>

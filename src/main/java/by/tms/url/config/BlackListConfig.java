@@ -1,21 +1,21 @@
 package by.tms.url.config;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.stereotype.Component;
-import org.springframework.context.annotation.Configuration;
-import java.util.List;
 
+
+import java.util.Set;
 
 
 @ConfigurationPropertiesScan
-@ConfigurationProperties(prefix = "banned")
+@ConfigurationProperties(prefix = "block")
 @Getter
-@AllArgsConstructor
+@Setter
 public class BlackListConfig {
 
-      List<String> bannedList;
+     private Set<String> blackList;
 }
 
