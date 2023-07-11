@@ -23,7 +23,7 @@ public class UrlServiceImplementation implements UrlService {
     @Transactional
     public URLModel addUrl(URI url) {
         if (!isUrlNotBannedAndHasHttpAndHttps(url)) {
-            throw new BusinessException("Uncorrect adress");
+            throw new BusinessException("Incorrect address");
         }
         return urlRepository.createUrl(url);
     }
